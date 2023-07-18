@@ -1,12 +1,23 @@
 project "spdlog"
-	kind "None"
+	kind "StaticLib"
 	language "C++"
 	cppdialect "C++20"
 
 	files
 	{
+		"include/**.h",
 		"src/**.h",
 		"src/**.cpp"
+	}
+
+	includedirs
+	{
+		"include"
+	}
+
+	defines
+	{
+		"SPDLOG_COMPILED_LIB"
 	}
 
 	filter "configurations:Debug"
